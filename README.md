@@ -1,6 +1,8 @@
 # Arbitrary style transfer in TensorFlow.js
 
-### Bundle for CSnap
+Used for our CSnap NST generations.
+
+## Bundle for CSnap
 
 ```bash
 yarn run prep
@@ -21,14 +23,14 @@ yarn run csnapdeploy
 Afterwards, copy images, and the four saved_model directories. Copy the entire visualizer directory, then
 add to the middleware folder in csnap_pro. Add the bundle js file before the csdt src files in snap.html.
 
-### Old README
+## Old README
 
 This repository contains an implementation of arbitrary style transfer running fully
 inside the browser using TensorFlow.js.
 
-Demo website: https://reiinakano.github.io/arbitrary-image-stylization-tfjs
+Demo website: <https://reiinakano.github.io/arbitrary-image-stylization-tfjs>
 
-Blog post with more details: https://magenta.tensorflow.org/blog/2018/12/20/style-transfer-js/
+Blog post with more details: <https://magenta.tensorflow.org/blog/2018/12/20/style-transfer-js/>
 
 ### Stylize an image
 

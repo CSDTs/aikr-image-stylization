@@ -41,6 +41,10 @@ class Core {
 		this.styleImg = document.getElementById("style-img");
 		this.stylized = document.getElementById("style-canvas");
 
+		// Get width and height of base image
+		const baseWidth = this.contentImg.width;
+		const baseHeight = this.contentImg.height;
+
 		this.connectImageAndSizeScale(this.contentImg, generic.contentSize);
 		this.connectImageAndSizeScale(this.styleImg, generic.sourceSize);
 
@@ -61,7 +65,29 @@ class Core {
 				this.startStyling().finally(() => {
 					let a = document.createElement("a");
 
-					document.querySelector("#converted-image").src = this.stylized.toDataURL("image/png", 1.0);
+					// document.querySelector("#converted-image").src = this.stylized.toDataURL("image/png", 1.0);
+					const ctx = this.stylized.getContext("2d");
+					const img = new Image();
+					img.src = this.stylized.toDataURL("image/png", 1.0); // Replace with your image URL
+					img.onload = () => {
+						// Draw the image on the top-left corner of the canvas
+						ctx.drawImage(img, 0, 0);
+
+						// Create a new canvas for the cropped image
+						const croppedCanvas = document.createElement("canvas");
+						croppedCanvas.width = baseWidth; // Set to the cropped width
+						croppedCanvas.height = baseHeight; // Set to the cropped height
+						const croppedCtx = croppedCanvas.getContext("2d");
+
+						// Extract the relevant portion from the original canvas
+						const imageData = ctx.getImageData(0, 0, baseWidth, baseHeight);
+						croppedCtx.putImageData(imageData, 0, 0);
+
+						// The croppedCanvas now contains the cropped image
+						document.querySelector("#converted-image").src = croppedCanvas.toDataURL("image/png", 1.0);
+						// document.body.appendChild(croppedCanvas); // Append to the document to see the result
+					};
+
 					if (generic.download) {
 						a.setAttribute("download", "output.png");
 						a.setAttribute("href", this.stylized.toDataURL("image/png", 1.0));
@@ -100,9 +126,7 @@ class Core {
 
 	async loadMobileNetStyleModel() {
 		if (!this.mobileStyleNet) {
-			this.mobileStyleNet = await tf.loadGraphModel(
-				"/static/csnap_pro/csdt/features/nst/lib/saved_model_style_js/model.json"
-			);
+			this.mobileStyleNet = await tf.loadGraphModel("/csnap_pro/csdt/features/nst/lib/saved_model_style_js/model.json");
 			if (this.ide) {
 				this.ide.broadcast("fastModelLoad");
 			}
@@ -114,7 +138,7 @@ class Core {
 	async loadInceptionStyleModel() {
 		if (!this.inceptionStyleNet) {
 			this.inceptionStyleNet = await tf.loadGraphModel(
-				"/static/csnap_pro/csdt/features/nst/lib/saved_model_style_inception_js/model.json"
+				"/csnap_pro/csdt/features/nst/lib/saved_model_style_inception_js/model.json"
 			);
 			if (this.ide) {
 				this.ide.broadcast("highModelLoad");
@@ -127,7 +151,7 @@ class Core {
 	async loadOriginalTransformerModel() {
 		if (!this.originalTransformNet) {
 			this.originalTransformNet = await tf.loadGraphModel(
-				"/static/csnap_pro/csdt/features/nst/lib/saved_model_transformer_js/model.json"
+				"/csnap_pro/csdt/features/nst/lib/saved_model_transformer_js/model.json"
 			);
 			if (this.ide) {
 				this.ide.broadcast("highTransformLoad");
@@ -140,7 +164,7 @@ class Core {
 	async loadSeparableTransformerModel() {
 		if (!this.separableTransformNet) {
 			this.separableTransformNet = await tf.loadGraphModel(
-				"/static/csnap_pro/csdt/features/nst/lib/saved_model_transformer_separable_js/model.json"
+				"/csnap_pro/csdt/features/nst/lib/saved_model_transformer_separable_js/model.json"
 			);
 			if (this.ide) {
 				this.ide.broadcast("fastTransformLoad");
