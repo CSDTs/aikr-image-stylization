@@ -1,0 +1,9 @@
+.centered {
+  margin: auto;
+  display: block;
+}
+
+div.col > .far.fa-question-circle {
+  color: rgb(82, 80, 80);
+  font-size: 1rem;
+}

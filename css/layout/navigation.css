@@ -1,0 +1,91 @@
+.nav-link--signup {
+  color: rgba(255, 255, 255, 1) !important;
+  align-self: center;
+}
+
+.nav-link--signup::after {
+  content: " ";
+}
+
+.navbar-dark {
+  background-color: #3c444c;
+  color: #cbcfd4;
+}
+.navbar-collapse--links {
+  justify-content: space-between;
+}
+
+.fa-user::after,
+.fa-question-circle::after {
+  content: "\00a0";
+  /* color: rgba(255, 255, 255, 0.5); */
+}
+
+.fa-question-circle {
+  color: rgba(255, 255, 255, 0.5);
+}
+.nav-link--help {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .nav-link--help::before {
+    content: " | ";
+    padding: 0 0.625rem 0 0;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .nav-link--help > span {
+    display: none;
+  }
+  .fa-question-circle {
+    font-size: 1.5rem;
+  }
+  .nav-link--help--mobile {
+    display: none;
+  }
+  .nav-link--help {
+    display: inherit;
+  }
+}
+
+.nav-link--status {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 170px;
+}
+
+#navUserStatus {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 170px;
+  cursor: pointer;
+}
+
+#navLinkContainer {
+  justify-content: space-between;
+}
+
+#navLinkContainer ul {
+  display: flex;
+}
+
+#navLinkContainer ul li {
+  -ms-flex-item-align: center !important;
+  align-self: center !important;
+}
+
+#navUserDropdown {
+  z-index: 1050;
+}
+
+.logo-img {
+  display: inline-block !important;
+  vertical-align: top !important;
+  height: 40px;
+}
+
+label.dropdown-item {
+  font-size: 1rem;
+}

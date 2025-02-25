@@ -1,0 +1,54 @@
+/* Labels */
+
+/* Input Groups */
+
+div.single-line-group {
+  display: flex;
+  /* padding-left: 15px;
+  padding-right: 15px; */
+  justify-content: space-between;
+}
+
+div.coordinate-input-group div.input-group {
+  max-width: 45%;
+}
+
+div.single-line-group.reflection-group {
+  flex: auto;
+}
+div.single-line-group div.align-self-center {
+  justify-content: flex-end;
+}
+div.single-line-group div.align-self-center div {
+  align-self: flex-start;
+}
+
+/* ////////////////////////////////////////////////////////////////*/
+
+.input-group--select {
+  padding-right: 0;
+  margin-bottom: 1rem;
+}
+
+legend {
+  font-size: 0.9rem !important;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+label {
+  font-size: 90%;
+  color: #6c757d;
+}
+
+.coordinate-input-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-control--color {
+  max-width: 45%;
+}
+
+input[type="text"] {
+  box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);
+}

@@ -1,0 +1,117 @@
+/* Braid Gallery */
+#braidGallery {
+  z-index: 1058;
+  color: hsl(0, 0%, 42%);
+}
+
+#braidGallery div.modal-dialog {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#braidGallery div div.modal-content {
+  background-color: hsl(0, 0%, 99%);
+  border-top: 6px solid #0092ed;
+}
+
+#braidGallery div div div.modal-body {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+#braidGallery div div div.modal-body p {
+  margin-bottom: 0;
+}
+
+#braidGallery div div div.modal-header h5 {
+  color: hsl(0, 0%, 27%) !important;
+  font-weight: 600;
+  font-size: 1.4rem;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+#braidGallery div div div.modal-header {
+  margin-top: 1rem;
+  border-bottom: 0px solid #dee2e6;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+#braidGallery div div div.modal-body button.btn-danger {
+  background-color: #ed0000;
+  font-weight: 600 !important;
+  border-bottom: 0;
+}
+
+#braidGallery div div div.modal-footer p {
+  width: 100%;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#braidGallery div div div.modal-footer p strong a {
+  color: hsl(0, 0%, 27%) !important;
+}
+
+#braidGallery div div div div.form-forgot-password {
+  text-align: right;
+  float: right;
+  /* display: inline-block; */
+}
+
+#braidGallery div div div div.form-forgot-password strong a {
+  color: hsl(0, 0%, 27%) !important;
+  font-size: 0.9rem;
+}
+
+#braidGallery div div div.modal-footer {
+  margin-top: 1.5rem;
+  background-color: hsl(0, 0%, 93%);
+  border-top: 0px;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-size: 0.9rem;
+  justify-content: flex-end;
+}
+
+#braidGallery div div div.modal-footer div button.btn-link {
+  color: hsl(0, 0%, 27%) !important;
+}
+
+#braidGallery div div div.modal-footer div button.btn-secondary {
+  color: #6e9dee !important;
+  border-color: #6e9dee;
+  background-color: hsl(0, 0%, 93%);
+}
+
+#braidGallery div div div.modal-footer div button.btn-primary {
+  /* color: hsl(0, 0%, 27%) !important; */
+  border: 0px;
+  background-color: hsla(203, 100%, 46%, 1);
+}
+
+/* Goal Image*/
+#goal-image {
+  padding: 5px;
+  border: solid 1px #efefef;
+  cursor: pointer;
+}
+.braid-img {
+  /* padding: 5px; */
+  border: solid 1px #efefef;
+  cursor: pointer;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img#goal-image:hover,
+img.braid-img:hover {
+  border: solid 1px #ccc;
+  -moz-box-shadow: 1px 1px 5px #999;
+  -webkit-box-shadow: 1px 1px 5px #999;
+  box-shadow: 1px 1px 5px #999;
+}
